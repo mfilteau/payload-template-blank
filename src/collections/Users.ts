@@ -7,7 +7,11 @@ export const Users: CollectionConfig = {
   },
   auth: true,
   fields: [
-    // Email added by default
-    // Add more fields as needed
+    {
+      name: 'userComments',
+      type: 'join',
+      collection: 'comments',
+      on: 'user',
+    },
   ],
 }
